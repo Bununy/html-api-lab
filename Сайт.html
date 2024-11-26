@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Это мой первый сайт, созданный с использованием HTML. Пример базовой структуры веб-страницы.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой первый сайт</title>
+	<link rel="stylesheet" href="style.css">
+	 <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        input, button {
+            margin: 10px 0;
+            padding: 10px 20px;
+        }
+
+        input {
+            width: calc(100% - 40px);
+            max-width: 400px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Добро пожаловать на мой первый сайт!</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">О сайте</a></li>
+                <li><a href="#interests">Мои интересы</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about">
+            <h2>О сайте</h2>
+            <p>Этот сайт создан как демонстрация базовой HTML-структуры. Здесь используются семантические теги HTML5, такие как <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code> и другие.</p>
+            <p><strong>HTML</strong> — это основа веб-страниц. Все начинается с изучения <em>структуры</em> и <b>семантики</b> разметки.</p>
+        </section>
+
+        <section id="interests">
+            <h2>Мои интересы</h2>
+            <p>В свободное время увлекаюсь рыбалкой и автомобилями, люблю ремонтировать свой <i>Opel Astra G Grand Caravan 1.7 TDI</i> (турбодизельный бусик) <strong>75HP</strong> в гараже, на досуге.</p>
+            
+            <h3>Хобби</h3>
+            <p>Некоторые мои увлечения включают:</p>
+            <ul>
+                <li>Рыбалка</li>
+                <li>Ремонт автомобилей
+                    <ul>
+                        <li>Турбодизельные машины</li>
+                        <li>Реставрация салона</li>
+                    </ul>
+                </li>
+                <li>Ведение блога о путешествиях</li>
+            </ul>
+
+            <h3>Планы</h3>
+            <p>Мои ближайшие планы:</p>
+            <ol>
+                <li>Провести капитальный ремонт двигателя</li>
+                <li>Улучшить навыки веб-разработки</li>
+                <li>Исследовать <a href="https://www.wikipedia.org" target="_blank">интересные сайты</a> с полезной информацией</li>
+            </ol>
+
+            <blockquote>
+                "Двигайся к цели, несмотря ни на что" — неизвестный автор
+            </blockquote>
+            <p>Мотивация и вдохновение помогают в <strong>достижении целей</strong>.<br> Так каждый день становится шагом вперёд.</p>
+        </section>
+		<section id="media">
+            <h2>Мультимедиа</h2>
+            <div class="media-container">
+                <!-- Видео -->
+                <video id="myVideo" controls width="400" poster="https://www.example.com/poster.jpg">
+                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                    Ваш браузер не поддерживает видео.
+                </video>
+                <div class="controls">
+                    <button id="playVideo">Play</button>
+                    <button id="pauseVideo">Pause</button>
+                    <button id="muteVideo">Mute</button>
+                </div>
+
+                <!-- Аудио -->
+                <audio id="myAudio" controls>
+                    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                    Ваш браузер не поддерживает аудио.
+                </audio>
+                <div class="controls">
+                    <button id="playAudio">Play</button>
+                    <button id="pauseAudio">Pause</button>
+                    <button id="muteAudio">Mute</button>
+                </div>
+            </div>
+        </section>
+        <!-- Кнопка регистрации, размещенная под контентом, перед футером -->
+        <div style="text-align: center;">
+            <a href="register.html" class="register-button">Регистрация</a>
+        </div>
+    </main>
+	
+<!-- Clipboard API -->
+    <h2>Копирование текста</h2>
+    <input type="text" id="textToCopy" value="Текст для копирования">
+    <button id="copyButton">Копировать</button>
+
+    <!-- Geolocation API -->
+    <h2>Определение местоположения</h2>
+    <button id="geoButton">Определить местоположение</button>
+    <p id="geoOutput">Ваше местоположение: </p>
+
+    <!-- Notifications API -->
+    <h2>Уведомления</h2>
+    <button id="notifyButton">Показать уведомление</button>
+
+    <script>
+        // Clipboard API
+        document.getElementById("copyButton").onclick = () => {
+            const text = document.getElementById("textToCopy").value;
+            navigator.clipboard.writeText(text).then(() => {
+                alert("Текст скопирован!");
+            }).catch(err => {
+                alert("Ошибка копирования: " + err);
+            });
+        };
+
+        // Geolocation API
+        document.getElementById("geoButton").onclick = () => {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    (position) => {
+                        document.getElementById("geoOutput").innerText =
+                            `Широта: ${position.coords.latitude}, Долгота: ${position.coords.longitude}`;
+                    },
+                    (error) => {
+                        document.getElementById("geoOutput").innerText = "Не удалось определить местоположение.";
+                    }
+                );
+            } else {
+                document.getElementById("geoOutput").innerText = "Геолокация не поддерживается вашим браузером.";
+            }
+        };
+
+        // Notifications API
+        document.getElementById("notifyButton").onclick = () => {
+            if ("Notification" in window) {
+                Notification.requestPermission().then(permission => {
+                    if (permission === "granted") {
+                        new Notification("Это уведомление с вашего сайта!");
+                    } else {
+                        alert("Уведомления заблокированы.");
+                    }
+                });
+            } else {
+                alert("Уведомления не поддерживаются вашим браузером.");
+            }
+        };
+    </script>
+    <footer id="contacts">
+        <h2>Контакты</h2>
+        <p>&copy; 2024 Мой первый сайт. Все права защищены.</p>
+    </footer>
+    <script src="script.js"></script>
+
+</body>
+</html>

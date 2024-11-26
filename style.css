@@ -1,0 +1,152 @@
+/* Базовые стили для страницы */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2 {
+    color: #333;
+    text-align: center;
+}
+
+p {
+    line-height: 1.6;
+    margin: 10px 0;
+}
+
+/* Стили для навигационного меню */
+nav {
+    text-align: center;
+    background-color: #333;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+}
+
+nav a {
+    color: #f9f9f9;
+    padding: 10px 15px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #007bff;
+}
+
+/* Основные стили для контента */
+main {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Стили для кнопки регистрации */
+.register-button {
+    display: inline-block;
+    margin: 20px 0;
+    padding: 12px 24px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.register-button:hover {
+    background-color: #45a049;
+}
+
+/* Стили для футера */
+footer {
+    background-color: #333;
+    color: #f9f9f9;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+/* Стили для страницы регистрации */
+form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input, select, button {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Адаптивные стили */
+@media (max-width: 600px) {
+    nav ul {
+        display: block;
+    }
+
+    .register-button {
+        width: 100%;
+    }
+
+    form {
+        width: 90%;
+        padding: 15px;
+    }
+/* Стили для медиа-раздела */
+.media-container {
+    text-align: center;
+    margin: 20px auto;
+}
+
+.controls {
+    margin-top: 10px;
+}
+
+.controls button {
+    padding: 8px 16px;
+    margin: 5px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.controls button:hover {
+    background-color: #0056b3;
+}
+
+video, audio {
+    margin-top: 10px;
+    max-width: 10%;
+}
